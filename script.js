@@ -1,24 +1,14 @@
-console.log("DreamBouw cargado 🚀");
+console.log("DreamBouw loaded");
 
-// BOTÓN INTERACTIVO
-function saludar() {
-    alert("Bienvenido a DreamBouw 🔥");
-}
-
-// CAMBIO DE COLOR DINÁMICO
-let titulo = document.querySelector("h1");
-
-titulo.addEventListener("click", () => {
-    titulo.style.color = "#ff4d4d";
-});
-
-// MENSAJE AL CARGAR
 window.onload = () => {
-    console.log("Página lista");
+    console.log("Page ready");
 };
+
 const toggle = document.getElementById("menu-toggle");
 const nav = document.getElementById("nav-links");
 
-toggle.addEventListener("click", () => {
-    nav.classList.toggle("active");
-});
+if (toggle && nav) {
+    toggle.addEventListener("click", () => {
+        nav.classList.toggle("active");
+    });
+}
