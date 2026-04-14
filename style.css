@@ -131,19 +131,55 @@ h2 {
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
+    gap: 20px;
 }
 
-.projects-grid img {
+.project-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    background: #111;
+}
+
+.project-card img {
     width: 100%;
-    height: 250px;
+    height: 260px;
     object-fit: cover;
-    border-radius: 8px;
-    transition: 0.3s;
+    display: block;
+    transition: opacity 0.25s ease;
 }
 
-.projects-grid img:hover {
-    transform: scale(1.05);
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 42px;
+    height: 42px;
+    border: none;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.55);
+    color: white;
+    font-size: 1.4rem;
+    cursor: pointer;
+    z-index: 2;
+    opacity: 0;
+    transition: opacity 0.2s ease, background 0.2s ease;
+}
+
+.arrow:hover {
+    background: rgba(255, 77, 0, 0.9);
+}
+
+.project-card:hover .arrow {
+    opacity: 1;
+}
+
+.arrow.left {
+    left: 10px;
+}
+
+.arrow.right {
+    right: 10px;
 }
 
 /* ========================= */
@@ -210,5 +246,18 @@ h2 {
     }
     .projects-grid {
         grid-template-columns: 1fr;
+    }
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .project-card img {
+        height: 240px;
+    }
+    
+    .arrow {
+        opacity: 1;
+        width: 38px;
+        height: 38px;
     }
 }
