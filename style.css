@@ -122,6 +122,68 @@ h2 {
     font-weight: bold;
 }
 
+/* SERVICES */
+.services {
+    background: #111;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    justify-items: center;
+}
+
+.service-card {
+    width: 100%;
+    max-width: 320px;
+    background: #1a1a1a;
+    padding: 30px;
+    border-radius: 10px;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    background: #222;
+}
+
+.service-card h3 {
+    margin-bottom: 15px;
+    color: white;
+}
+
+.service-card p {
+    color: #ccc;
+}
+
+/* LGS */
+.lgs {
+    background-color: #111;
+    padding: 80px 10%;
+}
+
+.lgs p {
+    margin-bottom: 20px;
+    color: #ccc;
+}
+
+.lgs-list {
+    margin: 20px 0;
+    padding-left: 20px;
+}
+
+.lgs-list li {
+    margin-bottom: 10px;
+    color: #ddd;
+}
+
+.lgs-final {
+    margin-top: 20px;
+    font-weight: bold;
+    color: white;
+}
+
 /* PROJECTS */
 .projects {
     padding: 80px 10%;
@@ -180,6 +242,20 @@ h2 {
 
 .arrow.right {
     right: 10px;
+}
+
+/* CONTACT */
+.contact p {
+    margin-bottom: 10px;
+}
+
+.contact a {
+    color: #ff4d00;
+    text-decoration: none;
+}
+
+.contact a:hover {
+    text-decoration: underline;
 }
 
 /* ========================= */
@@ -244,20 +320,26 @@ h2 {
     .about {
         text-align: left;
     }
-    .projects-grid {
+
+    .services-grid {
         grid-template-columns: 1fr;
     }
-    .projects-grid {
-        grid-template-columns: 1fr;
-    }
-    
+
     .project-card img {
         height: 240px;
     }
-    
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
     .arrow {
         opacity: 1;
         width: 38px;
         height: 38px;
+    }
+
+    .lgs {
+        padding: 50px 20px;
     }
 }
