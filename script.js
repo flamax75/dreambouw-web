@@ -4,7 +4,9 @@ window.onload = () => {
     console.log("Page ready");
 };
 
+/* ========================= */
 /* MOBILE MENU */
+/* ========================= */
 const toggle = document.getElementById("menu-toggle");
 const nav = document.getElementById("nav-links");
 
@@ -14,7 +16,9 @@ if (toggle && nav) {
     });
 }
 
-/* PROJECTS GALLERY - HOVER ONLY */
+/* ========================= */
+/* PROJECTS GALLERY (HOVER) */
+/* ========================= */
 const projectCards = document.querySelectorAll(".project-card");
 
 projectCards.forEach((card) => {
@@ -22,7 +26,7 @@ projectCards.forEach((card) => {
     const images = JSON.parse(card.dataset.images);
 
     let currentIndex = 0;
-    let hoverInterval = null;
+    let interval = null;
 
     function showNextImage() {
         currentIndex = (currentIndex + 1) % images.length;
@@ -35,14 +39,49 @@ projectCards.forEach((card) => {
         }, 150);
     }
 
+    // SOLO cuando pasas el ratón
     card.addEventListener("mouseenter", () => {
-        if (!hoverInterval) {
-            hoverInterval = setInterval(showNextImage, 1200);
+        if (!interval) {
+            interval = setInterval(showNextImage, 1200);
         }
     });
 
+    // cuando sales → se para
     card.addEventListener("mouseleave", () => {
-        clearInterval(hoverInterval);
-        hoverInterval = null;
+        clearInterval(interval);
+        interval = null;
     });
 });
+
+/* ========================= */
+/* HERO TEXT ANIMATION */
+/* ========================= */
+const heroText = document.getElementById("hero-text");
+
+if (heroText) {
+    const phrases = ["Dream it", "We build it"];
+    let index = 0;
+
+    function changeText() {
+        // salida
+        heroText.classList.add("hero-out");
+
+        setTimeout(() => {
+            index = (index + 1) % phrases.length;
+            heroText.textContent = phrases[index];
+
+            // entrada
+            heroText.classList.remove("hero-out");
+            heroText.classList.add("hero-in");
+
+            // limpiar clase
+            setTimeout(() => {
+                heroText.classList.remove("hero-in");
+            }, 600);
+
+        }, 400);
+    }
+
+    // cambio cada 2.5 segundos
+    setInterval(changeText, 2500);
+}
