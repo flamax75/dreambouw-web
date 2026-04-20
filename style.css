@@ -33,9 +33,13 @@ body {
 }
 
 /* LOGO */
-.logo {
-    font-size: 1.5rem;
-    font-weight: bold;
+.logo img {
+    height: 40px;
+    width: auto;
+    display: block;
+
+    /* efecto premium opcional */
+    filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.2));
 }
 
 /* LINKS */
@@ -270,6 +274,10 @@ h2 {
 
     .nav-links.active {
         display: flex;
+    }
+
+    .logo img {
+        height: 32px;
     }
 
     .nav-links li {
