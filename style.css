@@ -184,7 +184,7 @@ h2 {
     color: white;
 }
 
-/* PROJECTS */
+//* PROJECTS */
 .projects {
     padding: 80px 10%;
     background: #0a0a0a;
@@ -201,6 +201,7 @@ h2 {
     overflow: hidden;
     border-radius: 10px;
     background: #111;
+    transition: box-shadow 0.3s ease;
 }
 
 .project-card img {
@@ -208,40 +209,17 @@ h2 {
     height: 260px;
     object-fit: cover;
     display: block;
-    transition: opacity 0.25s ease;
+    transition: transform 0.4s ease, opacity 0.3s ease;
 }
 
-.arrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 42px;
-    height: 42px;
-    border: none;
-    border-radius: 50%;
-    background: rgba(0, 0, 0, 0.55);
-    color: white;
-    font-size: 1.4rem;
-    cursor: pointer;
-    z-index: 2;
-    opacity: 0;
-    transition: opacity 0.2s ease, background 0.2s ease;
+/* EFECTO HOVER (onda suave) */
+.project-card:hover img {
+    transform: scale(1.03);
 }
 
-.arrow:hover {
-    background: rgba(255, 77, 0, 0.9);
-}
-
-.project-card:hover .arrow {
-    opacity: 1;
-}
-
-.arrow.left {
-    left: 10px;
-}
-
-.arrow.right {
-    right: 10px;
+/* OPCIONAL: brillo suave tipo premium */
+.project-card:hover {
+    box-shadow: 0 0 20px rgba(255, 77, 0, 0.25);
 }
 
 /* CONTACT */
