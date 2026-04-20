@@ -69,8 +69,8 @@ body {
 
 /* HERO */
 .hero {
-    min-height: calc(100vh - 70px);
-    background: url("images/fondo.jpg") center/cover no-repeat;
+    height: 100vh;
+    background: url("images/fondo.jpg") center center / cover no-repeat;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -78,10 +78,15 @@ body {
 
 /* OVERLAY */
 .overlay {
-    background: rgba(0, 0, 0, 0.65);
-    padding: 40px;
-    text-align: center;
     width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.45);
+    /* 👈 menos oscuro, más elegante */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
 }
 
 /* HERO TEXT ANIMATION */
@@ -250,8 +255,91 @@ h2 {
     text-decoration: underline;
 }
 
+/* ========================= */
+/* INTRO VIDEO */
+/* ========================= */
+#intro-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#intro-video video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* DESAPARECER SUAVE */
+.fade-out {
+    opacity: 0;
+    transition: opacity 1s ease;
+    pointer-events: none;
+}
+
+/* ========================= */
+/* HERO */
+/* ========================= */
+.hero {
+    height: 100vh;
+    background: url("images/fondo.jpg") center center / cover no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* efecto zoom suave */
+    animation: zoomHero 20s ease-in-out infinite alternate;
+}
+
+/* ANIMACIÓN ZOOM */
+@keyframes zoomHero {
+    0% {
+        background-size: 100%;
+    }
+
+    100% {
+        background-size: 110%;
+    }
+}
+
+/* ========================= */
+/* OVERLAY */
+/* ========================= */
+.overlay {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.45);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+/* ========================= */
+/* HERO TEXT */
+/* ========================= */
+#hero-text {
+    font-size: 3rem;
+    font-weight: bold;
+    color: white;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+}
+
+/* ========================= */
 /* MOBILE */
+/* ========================= */
 @media (max-width: 768px) {
+
     body {
         padding-top: 70px;
     }
@@ -286,13 +374,21 @@ h2 {
     }
 
     .hero {
-        min-height: calc(100vh - 70px);
-        padding: 40px 20px;
-        background-position: center;
+        height: 100vh;
+        padding: 0;
+        background-position: center center;
+        background-size: cover;
     }
 
     .overlay {
-        padding: 25px 20px;
+        width: 100%;
+        height: 100%;
+        padding: 20px;
+        background: rgba(0, 0, 0, 0.35);
+    }
+
+    #hero-text {
+        font-size: 2rem;
     }
 
     section {
@@ -321,56 +417,5 @@ h2 {
 
     .lgs {
         padding: 50px 20px;
-    }
-
-    #hero-text {
-        font-size: 2rem;
-    }
-}
-
-/* INTRO VIDEO */
-#intro-video {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: black;
-    z-index: 9999;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-#intro-video video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-/* DESAPARECER SUAVE */
-.fade-out {
-    opacity: 0;
-    transition: opacity 1s ease;
-    pointer-events: none;
-}
-/* HERO ZOOM EFFECT */
-.hero {
-    min-height: calc(100vh - 70px);
-    background: url("images/fondo.jpg") center/cover no-repeat;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    animation: zoomHero 20s ease-in-out infinite alternate;
-}
-
-/* ANIMACIÓN */
-@keyframes zoomHero {
-    0% {
-        background-size: 100%;
-    }
-    100% {
-        background-size: 110%;
     }
 }
