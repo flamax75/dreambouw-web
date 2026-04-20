@@ -59,7 +59,7 @@ projectCards.forEach((card) => {
 const heroText = document.getElementById("hero-text");
 
 if (heroText) {
-    const phrases = ["Dream it", "We build it"];
+    const phrases = ["DREAM IT", "WE BUILD IT"];
     let index = 0;
 
     function changeText() {
