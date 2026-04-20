@@ -85,3 +85,16 @@ if (heroText) {
     // cambio cada 2.5 segundos
     setInterval(changeText, 2500);
 }
+/* INTRO VIDEO CONTROL */
+const intro = document.getElementById("intro-video");
+const video = document.getElementById("introVid");
+
+if (video) {
+    video.addEventListener("ended", () => {
+        intro.classList.add("fade-out");
+
+        setTimeout(() => {
+            intro.style.display = "none";
+        }, 1000);
+    });
+}
