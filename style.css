@@ -37,8 +37,6 @@ body {
     height: 40px;
     width: auto;
     display: block;
-
-    /* efecto premium opcional */
     filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.2));
 }
 
@@ -81,7 +79,6 @@ body {
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.45);
-    /* 👈 menos oscuro, más elegante */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -89,14 +86,14 @@ body {
     padding: 20px;
 }
 
-/* HERO TEXT ANIMATION */
+/* HERO TEXT */
 #hero-text {
-    font-size: 2.8rem;
+    font-size: 3rem;
     font-weight: bold;
-    text-align: center;
     color: white;
-    letter-spacing: 1px;
-    text-shadow: 0 0 15px rgba(255, 255, 255, 0.15);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
     opacity: 1;
     transform: translateY(0);
     transition: opacity 0.6s ease, transform 0.6s ease;
@@ -130,7 +127,6 @@ h2 {
     background-color: #111;
 }
 
-/* TEXTO ABOUT */
 .about p {
     margin-bottom: 20px;
     color: #ccc;
@@ -232,7 +228,6 @@ h2 {
     transition: transform 0.4s ease, opacity 0.3s ease;
 }
 
-/* EFECTO HOVER */
 .project-card:hover img {
     transform: scale(1.03);
 }
@@ -255,91 +250,30 @@ h2 {
     text-decoration: underline;
 }
 
-/* ========================= */
 /* INTRO VIDEO */
-/* ========================= */
 #intro-video {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    inset: 0;
     background: black;
     z-index: 9999;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    overflow: hidden;
 }
 
 #intro-video video {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    display: block;
 }
 
-/* DESAPARECER SUAVE */
 .fade-out {
     opacity: 0;
     transition: opacity 1s ease;
     pointer-events: none;
 }
 
-/* ========================= */
-/* HERO */
-/* ========================= */
-.hero {
-    height: 100vh;
-    background: url("images/fondo.jpg") center center / cover no-repeat;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    /* efecto zoom suave */
-    animation: zoomHero 20s ease-in-out infinite alternate;
-}
-
-/* ANIMACIÓN ZOOM */
-@keyframes zoomHero {
-    0% {
-        background-size: 100%;
-    }
-
-    100% {
-        background-size: 110%;
-    }
-}
-
-/* ========================= */
-/* OVERLAY */
-/* ========================= */
-.overlay {
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.45);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 20px;
-}
-
-/* ========================= */
-/* HERO TEXT */
-/* ========================= */
-#hero-text {
-    font-size: 3rem;
-    font-weight: bold;
-    color: white;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    text-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
-}
-
-/* ========================= */
 /* MOBILE */
-/* ========================= */
 @media (max-width: 768px) {
-
     body {
         padding-top: 70px;
     }

@@ -39,14 +39,12 @@ projectCards.forEach((card) => {
         }, 150);
     }
 
-    // SOLO cuando pasas el ratón
     card.addEventListener("mouseenter", () => {
         if (!interval) {
             interval = setInterval(showNextImage, 1200);
         }
     });
 
-    // cuando sales → se para
     card.addEventListener("mouseleave", () => {
         clearInterval(interval);
         interval = null;
@@ -63,38 +61,46 @@ if (heroText) {
     let index = 0;
 
     function changeText() {
-        // salida
         heroText.classList.add("hero-out");
 
         setTimeout(() => {
             index = (index + 1) % phrases.length;
             heroText.textContent = phrases[index];
 
-            // entrada
             heroText.classList.remove("hero-out");
             heroText.classList.add("hero-in");
 
-            // limpiar clase
             setTimeout(() => {
                 heroText.classList.remove("hero-in");
             }, 600);
-
         }, 400);
     }
 
-    // cambio cada 2.5 segundos
     setInterval(changeText, 2500);
 }
+
+/* ========================= */
 /* INTRO VIDEO CONTROL */
+/* ========================= */
 const intro = document.getElementById("intro-video");
 const video = document.getElementById("introVid");
 
-if (video) {
-    video.addEventListener("ended", () => {
+if (intro && video) {
+    let introClosed = false;
+
+    function closeIntro() {
+        if (introClosed) return;
+        introClosed = true;
+
         intro.classList.add("fade-out");
 
         setTimeout(() => {
             intro.style.display = "none";
         }, 1000);
-    });
+    }
+
+    video.addEventListener("ended", closeIntro);
+
+    /* respaldo para móvil por si "ended" falla */
+    setTimeout(closeIntro, 6000);
 }
