@@ -9,12 +9,21 @@ window.onload = () => {
 /* ========================= */
 const toggle = document.getElementById("menu-toggle");
 const nav = document.getElementById("nav-links");
+const navItems = document.querySelectorAll(".nav-links a");
 
 if (toggle && nav) {
     toggle.addEventListener("click", () => {
         nav.classList.toggle("active");
     });
 }
+
+navItems.forEach((link) => {
+    link.addEventListener("click", () => {
+        if (window.innerWidth <= 768) {
+            nav.classList.remove("active");
+        }
+    });
+});
 
 /* ========================= */
 /* PROJECTS GALLERY (HOVER) */
