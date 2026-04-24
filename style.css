@@ -15,7 +15,7 @@ body {
     background-color: #0a0a0a;
     color: white;
     line-height: 1.6;
-    padding-top: 70px;
+    padding-top: 82px;
 }
 
 /* NAVBAR */
@@ -26,18 +26,68 @@ body {
     width: 100%;
     background: #000;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     padding: 15px 20px;
     z-index: 1000;
+    min-height: 82px;
 }
 
 /* LOGO */
-.logo img {
-    height: 40px;
-    width: auto;
-    display: block;
-    filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.2));
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.logo-text {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: Arial, sans-serif;
+    font-weight: 900;
+    font-size: 2rem;
+    line-height: 1;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.logo-silver,
+.logo-gold {
+    display: inline-block;
+    text-shadow:
+        0 1px 0 rgba(255, 255, 255, 0.35),
+        0 2px 0 rgba(0, 0, 0, 0.25),
+        0 3px 6px rgba(0, 0, 0, 0.45);
+}
+
+.logo-silver {
+    background: linear-gradient(to bottom,
+            #ffffff 0%,
+            #f2f2f2 18%,
+            #cfcfcf 38%,
+            #ffffff 52%,
+            #9c9c9c 72%,
+            #eeeeee 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.logo-gold {
+    background: linear-gradient(to bottom,
+            #fff4b0 0%,
+            #ffd95a 18%,
+            #c69214 40%,
+            #ffea8a 55%,
+            #9f6d00 75%,
+            #f5cd45 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 /* LINKS */
@@ -81,7 +131,6 @@ body {
     inset: 0;
     background: url("images/fondo.jpg") center center / cover no-repeat;
     z-index: 0;
-
     animation: zoomHero 20s ease-in-out infinite alternate;
 }
 
@@ -102,11 +151,8 @@ body {
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.45);
-
-    /* 👇 AQUÍ ESTÁ EL CAMBIO */
     backdrop-filter: blur(2px);
     -webkit-backdrop-filter: blur(2px);
-
     display: flex;
     justify-content: center;
     align-items: center;
@@ -335,8 +381,18 @@ h2 {
         padding-top: 70px;
     }
 
+    .navbar {
+        justify-content: center;
+        padding: 15px 50px 15px 20px;
+        min-height: 70px;
+    }
+
     .menu-toggle {
         display: block;
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
     }
 
     .nav-links {
@@ -355,8 +411,9 @@ h2 {
         display: flex;
     }
 
-    .logo img {
-        height: 32px;
+    .logo-text {
+        font-size: 1.15rem;
+        gap: 6px;
     }
 
     .nav-links li {
