@@ -12,10 +12,31 @@ html {
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #0a0a0a;
+    background-color: #000;
     color: white;
     line-height: 1.6;
-    padding-top: 82px;
+    padding-top: 64px;
+    position: relative;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: url("images/estructura-sola.png") center center / cover no-repeat;
+    transform: scale(1.12);
+    filter: blur(7px) brightness(0.58);
+    z-index: -2;
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.20);
+    z-index: -1;
 }
 
 /* NAVBAR */
@@ -24,13 +45,15 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    background: #000;
+    background: rgba(0, 0, 0, 0.72);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 15px 20px;
+    padding: 10px 20px;
     z-index: 1000;
-    min-height: 82px;
+    min-height: 64px;
 }
 
 /* LOGO */
@@ -45,12 +68,12 @@ body {
     text-decoration: none;
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 8px;
     font-family: Arial, sans-serif;
     font-weight: 900;
-    font-size: 2rem;
+    font-size: 1.35rem;
     line-height: 1;
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
     text-transform: uppercase;
     white-space: nowrap;
 }
@@ -227,7 +250,7 @@ h2 {
 
 /* ABOUT */
 .about {
-    background-color: #111;
+    background-color: rgba(10, 10, 10, 0.28);
 }
 
 .about p {
@@ -243,7 +266,7 @@ h2 {
 
 /* SERVICES */
 .services {
-    background: #111;
+    background: rgba(10, 10, 10, 0.28);
 }
 
 .services-grid {
@@ -256,7 +279,7 @@ h2 {
 .service-card {
     width: 100%;
     max-width: 320px;
-    background: #1a1a1a;
+    background: rgba(26, 26, 26, 0.68);
     padding: 30px;
     border-radius: 10px;
     transition: transform 0.3s ease, background 0.3s ease;
@@ -264,7 +287,7 @@ h2 {
 
 .service-card:hover {
     transform: translateY(-5px);
-    background: #222;
+    background: rgba(34, 34, 34, 0.82);
 }
 
 .service-card h3 {
@@ -278,7 +301,7 @@ h2 {
 
 /* LGS */
 .lgs {
-    background-color: #111;
+    background-color: rgba(10, 10, 10, 0.28);
     padding: 80px 10%;
 }
 
@@ -306,7 +329,7 @@ h2 {
 /* PROJECTS */
 .projects {
     padding: 80px 10%;
-    background: #0a0a0a;
+    background: rgba(10, 10, 10, 0.22);
 }
 
 .projects-grid {
@@ -319,7 +342,7 @@ h2 {
     position: relative;
     overflow: hidden;
     border-radius: 10px;
-    background: #111;
+    background: rgba(17, 17, 17, 0.68);
     transition: box-shadow 0.3s ease;
 }
 
@@ -340,6 +363,10 @@ h2 {
 }
 
 /* CONTACT */
+.contact {
+    background: rgba(10, 10, 10, 0.25);
+}
+
 .contact p {
     margin-bottom: 10px;
 }
@@ -381,6 +408,11 @@ h2 {
         padding-top: 70px;
     }
 
+    body::before {
+        transform: scale(1.08);
+        filter: blur(6px) brightness(0.55);
+    }
+
     .navbar {
         justify-content: center;
         padding: 15px 50px 15px 20px;
@@ -400,7 +432,7 @@ h2 {
         top: 70px;
         left: 0;
         width: 100%;
-        background: #000;
+        background: rgba(0, 0, 0, 0.92);
         flex-direction: column;
         text-align: center;
         display: none;
@@ -412,8 +444,8 @@ h2 {
     }
 
     .logo-text {
-        font-size: 1.15rem;
-        gap: 6px;
+        font-size: 1.05rem;
+        gap: 5px;
     }
 
     .nav-links li {
