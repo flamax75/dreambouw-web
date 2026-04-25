@@ -113,3 +113,10 @@ if (intro && video) {
     /* respaldo para móvil por si "ended" falla */
     setTimeout(closeIntro, 6000);
 }
+if ("serviceWorker" in navigator) {
+    window.addEventListener("load", () => {
+        navigator.serviceWorker.register("/service-worker.js")
+            .then(() => console.log("Service Worker registrado"))
+            .catch((error) => console.log("Error Service Worker:", error));
+    });
+}
