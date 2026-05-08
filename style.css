@@ -21,6 +21,10 @@ body {
     overflow-x: hidden;
 }
 
+body.lightbox-open {
+    overflow: hidden;
+}
+
 body::before {
     content: "";
     position: fixed;
@@ -153,6 +157,17 @@ body::after {
     font-size: 2rem;
     cursor: pointer;
     color: white;
+    background: transparent;
+    border: 0;
+    line-height: 1;
+    padding: 4px;
+}
+
+.menu-toggle:focus-visible,
+.nav-links a:focus-visible,
+.logo-text:focus-visible {
+    outline: 2px solid #e7c46a;
+    outline-offset: 4px;
 }
 
 /* HERO */
@@ -200,6 +215,13 @@ body::after {
     padding: 20px;
 }
 
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 28px;
+}
+
 /* HERO TEXT */
 #hero-text {
     font-size: 2.8rem;
@@ -237,6 +259,53 @@ body::after {
     opacity: 0.7;
 }
 
+.hero-actions,
+.contact-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px;
+}
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    padding: 10px 18px;
+    border-radius: 4px;
+    border: 1px solid transparent;
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    line-height: 1.2;
+    transition: background 0.25s ease, border-color 0.25s ease, color 0.25s ease;
+}
+
+.button-primary {
+    background: #ff4d00;
+    color: white;
+}
+
+.button-primary:hover,
+.button-primary:focus-visible {
+    background: #e74400;
+    color: white;
+}
+
+.button-secondary {
+    border-color: rgba(255, 255, 255, 0.55);
+    background: rgba(0, 0, 0, 0.36);
+    color: white;
+}
+
+.button-secondary:hover,
+.button-secondary:focus-visible {
+    border-color: #e7c46a;
+    color: #e7c46a;
+}
+
 #hero-text:hover::after {
     width: 100px;
     opacity: 1;
@@ -255,6 +324,8 @@ body::after {
 /* SECCIONES */
 section {
     padding: 80px 10%;
+    content-visibility: auto;
+    contain-intrinsic-size: 700px;
 }
 
 /* TITULOS */
@@ -363,6 +434,20 @@ h2 {
     transition: box-shadow 0.3s ease;
 }
 
+.project-button {
+    display: block;
+    width: 100%;
+    border: 0;
+    padding: 0;
+    background: transparent;
+    cursor: pointer;
+}
+
+.project-button:focus-visible {
+    outline: 2px solid #e7c46a;
+    outline-offset: 4px;
+}
+
 .project-card img {
     width: 100%;
     height: 260px;
@@ -386,15 +471,109 @@ h2 {
 
 .contact p {
     margin-bottom: 10px;
+    color: #ccc;
 }
 
 .contact a {
-    color: #ff4d00;
     text-decoration: none;
 }
 
-.contact a:hover {
-    text-decoration: underline;
+.contact-actions {
+    justify-content: flex-start;
+    margin-top: 22px;
+}
+
+/* LIGHTBOX */
+.lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 5000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+}
+
+.lightbox.is-open {
+    display: flex;
+}
+
+.lightbox-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.86);
+}
+
+.lightbox-dialog {
+    position: relative;
+    z-index: 1;
+    width: min(100%, 980px);
+    display: grid;
+    grid-template-columns: 52px 1fr 52px;
+    grid-template-rows: 1fr auto;
+    align-items: center;
+    gap: 12px;
+}
+
+.lightbox-image {
+    grid-column: 2;
+    max-width: 100%;
+    max-height: 78vh;
+    object-fit: contain;
+    justify-self: center;
+    border-radius: 6px;
+    background: #111;
+}
+
+.lightbox-close,
+.lightbox-nav {
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    background: rgba(0, 0, 0, 0.58);
+    color: white;
+    cursor: pointer;
+}
+
+.lightbox-close:hover,
+.lightbox-close:focus-visible,
+.lightbox-nav:hover,
+.lightbox-nav:focus-visible {
+    border-color: #e7c46a;
+    color: #e7c46a;
+    outline: 2px solid #e7c46a;
+    outline-offset: 3px;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: -54px;
+    right: 0;
+    width: 44px;
+    height: 44px;
+    border-radius: 4px;
+    font-size: 2rem;
+    line-height: 1;
+}
+
+.lightbox-nav {
+    width: 52px;
+    height: 70px;
+    border-radius: 4px;
+    font-size: 3rem;
+    line-height: 1;
+}
+
+.lightbox-prev {
+    grid-column: 1;
+}
+
+.lightbox-next {
+    grid-column: 3;
+}
+
+.lightbox-count {
+    grid-column: 1 / -1;
+    text-align: center;
+    color: #ccc;
 }
 
 /* INTRO VIDEO */
@@ -413,10 +592,46 @@ h2 {
     display: block;
 }
 
+.intro-skip {
+    position: absolute;
+    right: 24px;
+    bottom: 24px;
+    z-index: 1;
+    padding: 10px 18px;
+    border: 1px solid rgba(255, 255, 255, 0.45);
+    border-radius: 4px;
+    background: rgba(0, 0, 0, 0.56);
+    color: white;
+    cursor: pointer;
+    font: inherit;
+}
+
+.intro-skip:hover,
+.intro-skip:focus-visible {
+    background: rgba(0, 0, 0, 0.78);
+    outline: 2px solid #e7c46a;
+    outline-offset: 3px;
+}
+
 .fade-out {
     opacity: 0;
     transition: opacity 1s ease;
     pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
 }
 
 /* MOBILE */
@@ -499,6 +714,16 @@ h2 {
         font-size: 2rem;
     }
 
+    .hero-actions,
+    .contact-actions {
+        width: 100%;
+    }
+
+    .button {
+        width: 100%;
+        max-width: 320px;
+    }
+
     section {
         padding: 50px 20px;
     }
@@ -521,6 +746,25 @@ h2 {
 
     .project-card img {
         height: 240px;
+    }
+
+    .lightbox {
+        padding: 16px;
+    }
+
+    .lightbox-dialog {
+        grid-template-columns: 44px 1fr 44px;
+        gap: 8px;
+    }
+
+    .lightbox-image {
+        max-height: 72vh;
+    }
+
+    .lightbox-nav {
+        width: 44px;
+        height: 58px;
+        font-size: 2.4rem;
     }
 
     .lgs {

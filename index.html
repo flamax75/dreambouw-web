@@ -5,7 +5,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DreamBouw Group</title>
+    <meta name="description"
+        content="DreamBouw Group delivers construction, renovations, project management, interior design, pool houses, and Light Gauge Steel solutions with durable, professional execution.">
+    <link rel="canonical" href="https://dreambouwgroup.com/">
 
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="DreamBouw Group">
+    <meta property="og:description"
+        content="Construction, renovations, project management, interior design, pool houses, and Light Gauge Steel solutions.">
+    <meta property="og:url" content="https://dreambouwgroup.com/">
+    <meta property="og:image" content="https://dreambouwgroup.com/images/fondo.jpg">
+    <meta property="og:site_name" content="DreamBouw Group">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="DreamBouw Group">
+    <meta name="twitter:description"
+        content="Construction, renovations, project management, interior design, pool houses, and Light Gauge Steel solutions.">
+    <meta name="twitter:image" content="https://dreambouwgroup.com/images/fondo.jpg">
+
+    <link rel="preload" href="images/fondo.jpg" as="image">
     <link rel="stylesheet" href="style.css">
     <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#000000">
@@ -15,13 +33,31 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="DreamBouw">
+
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "ConstructionBusiness",
+            "name": "DreamBouw Group",
+            "url": "https://dreambouwgroup.com/",
+            "logo": "https://dreambouwgroup.com/images/logo.jpg",
+            "email": "info@dreambouwgroup.com",
+            "telephone": "+32494583589",
+            "founder": {
+                "@type": "Person",
+                "name": "Vlad Maxim"
+            },
+            "description": "Construction, renovations, project management, interior design, pool houses, and Light Gauge Steel solutions."
+        }
+    </script>
 </head>
 
 <body>
     <div id="intro-video">
-        <video id="introVid" autoplay muted playsinline>
+        <video id="introVid" autoplay muted playsinline preload="metadata" poster="images/fondo.jpg">
             <source src="videos/intro.mp4" type="video/mp4">
         </video>
+        <button class="intro-skip" id="intro-skip" type="button">Skip</button>
     </div>
 
     <!-- NAVBAR -->
@@ -33,9 +69,10 @@
             </a>
         </div>
 
-        <div class="menu-toggle" id="menu-toggle">
+        <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Open navigation menu"
+            aria-controls="nav-links" aria-expanded="false">
             ☰
-        </div>
+        </button>
 
         <ul class="nav-links" id="nav-links">
             <li><a href="#home">Home</a></li>
@@ -50,7 +87,15 @@
     <!-- HERO -->
     <header class="hero" id="home">
         <div class="overlay">
-            <h1 id="hero-text">YOU DREAM IT</h1>
+            <div class="hero-content">
+                <h1 id="hero-text">YOU DREAM IT</h1>
+                <div class="hero-actions">
+                    <a class="button button-primary"
+                        href="mailto:info@dreambouwgroup.com?subject=Project%20request%20-%20DreamBouw%20Group">Request a
+                        quote</a>
+                    <a class="button button-secondary" href="#projects">View work</a>
+                </div>
+            </div>
         </div>
     </header>
 
@@ -160,32 +205,50 @@
 
                 <div class="project-card"
                     data-images='["images/project1.jpg","images/project1-2.jpg","images/project1-3.jpg","images/project1-4.jpg"]'>
-                    <img src="images/project1.jpg" alt="">
+                    <button class="project-button" type="button" aria-label="Open construction project gallery">
+                        <img src="images/project1.jpg" alt="DreamBouw construction project exterior view" width="1536"
+                            height="1152" loading="lazy" decoding="async">
+                    </button>
                 </div>
 
                 <div class="project-card"
                     data-images='["images/project2.jpg","images/project2-2.jpg","images/project2-3.jpg","images/project2-4.jpg"]'>
-                    <img src="images/project2.jpg" alt="">
+                    <button class="project-button" type="button" aria-label="Open renovation project gallery">
+                        <img src="images/project2.jpg" alt="DreamBouw renovation project detail" width="1152"
+                            height="1536" loading="lazy" decoding="async">
+                    </button>
                 </div>
 
                 <div class="project-card"
                     data-images='["images/project3.jpg","images/project3-2.jpg","images/project3-3.jpg","images/project3-4.jpg"]'>
-                    <img src="images/project3.jpg" alt="">
+                    <button class="project-button" type="button" aria-label="Open structural construction gallery">
+                        <img src="images/project3.jpg" alt="DreamBouw structural construction work" width="1536"
+                            height="1152" loading="lazy" decoding="async">
+                    </button>
                 </div>
 
                 <div class="project-card"
                     data-images='["images/project4.jpg","images/project4-2.jpg","images/project4-3.jpg","images/project4-4.jpg"]'>
-                    <img src="images/project4.jpg" alt="">
+                    <button class="project-button" type="button" aria-label="Open interior and finishing gallery">
+                        <img src="images/project4.jpg" alt="DreamBouw interior and finishing project" width="1536"
+                            height="1152" loading="lazy" decoding="async">
+                    </button>
                 </div>
 
                 <div class="project-card"
                     data-images='["images/project5.jpg","images/project5-2.jpg","images/project5-3.jpg","images/project5-4.jpg"]'>
-                    <img src="images/project5.jpg" alt="">
+                    <button class="project-button" type="button" aria-label="Open residential building gallery">
+                        <img src="images/project5.jpg" alt="DreamBouw residential building project" width="1536"
+                            height="1152" loading="lazy" decoding="async">
+                    </button>
                 </div>
 
                 <div class="project-card"
                     data-images='["images/project6.jpg","images/project6-2.jpg","images/project6-3.jpg","images/project6-4.jpg"]'>
-                    <img src="images/project6.jpg" alt="">
+                    <button class="project-button" type="button" aria-label="Open completed construction gallery">
+                        <img src="images/project6.jpg" alt="DreamBouw completed construction project" width="1536"
+                            height="864" loading="lazy" decoding="async">
+                    </button>
                 </div>
 
             </div>
@@ -196,10 +259,27 @@
     <section id="contact" class="section contact">
         <div class="container">
             <h2>Contact</h2>
-            <p>Email: <a href="mailto:dreambouw@gmail.com">dreambouw@gmail.com</a></p>
-            <p>Phone: +00 000 000 000</p>
+            <p>Tell us what you want to build and we will get back to you with the next steps.</p>
+            <div class="contact-actions">
+                <a class="button button-primary"
+                    href="mailto:info@dreambouwgroup.com?subject=Project%20request%20-%20DreamBouw%20Group&body=Hello%20DreamBouw%20Group,%0D%0A%0D%0AI%20would%20like%20to%20discuss%20a%20project.%0D%0A%0D%0AProject%20type:%0D%0ALocation:%0D%0ATimeline:%0D%0AMessage:%0D%0A">Email
+                    DreamBouw</a>
+                <a class="button button-secondary" href="mailto:info@dreambouwgroup.com">info@dreambouwgroup.com</a>
+                <a class="button button-secondary" href="tel:+32494583589">+32 494 58 35 89</a>
+            </div>
         </div>
     </section>
+
+    <div class="lightbox" id="project-lightbox" aria-hidden="true">
+        <div class="lightbox-backdrop" data-lightbox-close></div>
+        <div class="lightbox-dialog" role="dialog" aria-modal="true" aria-label="Project gallery">
+            <button class="lightbox-close" type="button" aria-label="Close gallery" data-lightbox-close>×</button>
+            <button class="lightbox-nav lightbox-prev" type="button" aria-label="Previous image">‹</button>
+            <img class="lightbox-image" id="lightbox-image" src="images/project1.jpg" alt="">
+            <button class="lightbox-nav lightbox-next" type="button" aria-label="Next image">›</button>
+            <p class="lightbox-count" id="lightbox-count"></p>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
