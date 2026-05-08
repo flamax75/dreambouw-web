@@ -35,6 +35,80 @@ if (toggle && nav) {
 }
 
 /* ========================= */
+/* SERVICE GALLERIES */
+/* ========================= */
+const serviceGalleries = {
+    construction: [
+        "images/construction/construction-1.jpg",
+        "images/construction/construction-2.jpg",
+        "images/construction/construction-3.jpg",
+        "images/construction/construction-4.jpg",
+        "images/construction/construction-5.jpg",
+        "images/construction/construction-6.jpg",
+        "images/construction/construction-7.jpg",
+        "images/construction/construction-8.jpg",
+        "images/construction/construction-9.jpg",
+        "images/construction/construction-10.jpg",
+        "images/construction/construction-11.jpg",
+        "images/construction/construction-12.jpeg",
+        "images/construction/construction-13.jpeg",
+        "images/construction/construction-14.jpeg",
+        "images/construction/construction-15.jpeg",
+        "images/construction/construction-16.jpeg",
+        "images/construction/construction-17.jpeg",
+        "images/construction/construction-18.jpeg",
+        "images/construction/construction-19.jpeg",
+    ],
+    renovations: [
+        "images/renovations/renovation-1.jpeg",
+        "images/renovations/renovation-2.jpeg",
+        "images/renovations/renovation-3.jpeg",
+        "images/renovations/renovation-4.jpeg",
+        "images/renovations/renovation-5.jpeg",
+        "images/renovations/renovation-6.jpeg",
+        "images/renovations/renovation-7.jpeg",
+        "images/renovations/renovation-8.jpeg",
+        "images/renovations/renovation-9.jpeg",
+        "images/renovations/renovation-10.jpeg",
+        "images/renovations/renovation-11.jpeg",
+        "images/renovations/renovation-12.jpeg",
+    ],
+    "interior-design": [
+        "images/interior-design/interior-design-1.jpeg",
+        "images/interior-design/interior-design-2.jpeg",
+        "images/interior-design/interior-design-3.jpeg",
+        "images/interior-design/interior-design-4.jpeg",
+        "images/interior-design/interior-design-5.jpeg",
+        "images/interior-design/interior-design-6.jpeg",
+        "images/interior-design/interior-design-7.jpeg",
+        "images/interior-design/interior-design-8.jpeg",
+        "images/interior-design/interior-design-9.jpeg",
+        "images/interior-design/interior-design-10.jpeg",
+        "images/interior-design/interior-design-11.jpeg",
+        "images/interior-design/interior-design-12.jpeg",
+    ],
+    "garden-living-units": [
+        "images/pool-houses/pool-house-1.jpeg",
+        "images/pool-houses/pool-house-2.jpeg",
+        "images/pool-houses/pool-house-3.jpeg",
+        "images/pool-houses/pool-house-4.jpeg",
+    ],
+};
+
+document.querySelectorAll("[data-gallery-key]").forEach((gallery) => {
+    const images = serviceGalleries[gallery.dataset.galleryKey] || [];
+    const label = gallery.dataset.galleryKey.replaceAll("-", " ");
+
+    gallery.innerHTML = images.map((image, index) => `
+        <div class="project-card" data-images='${JSON.stringify(images)}' data-start-index="${index}">
+            <button class="project-button" type="button" aria-label="Open ${label} image ${index + 1}">
+                <img src="${image}" alt="${label} image ${index + 1}" loading="lazy" decoding="async">
+            </button>
+        </div>
+    `).join("");
+});
+
+/* ========================= */
 /* PROJECTS GALLERY (HOVER) */
 /* ========================= */
 const projectCards = document.querySelectorAll(".project-card");
@@ -104,7 +178,8 @@ projectCards.forEach((card) => {
         images = img ? [img.src] : [];
     }
 
-    let currentIndex = 0;
+    const startIndex = Number(card.dataset.startIndex || 0);
+    let currentIndex = Number.isNaN(startIndex) ? 0 : startIndex;
     let interval = null;
 
     function showNextImage() {

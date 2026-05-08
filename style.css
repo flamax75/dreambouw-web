@@ -365,6 +365,7 @@ h2 {
 }
 
 .service-card {
+    display: block;
     width: 100%;
     max-width: 320px;
     background: rgba(26, 26, 26, 0.68);
@@ -378,6 +379,16 @@ h2 {
     background: rgba(34, 34, 34, 0.82);
 }
 
+.service-link {
+    color: inherit;
+    text-decoration: none;
+}
+
+.service-link:focus-visible {
+    outline: 2px solid #e7c46a;
+    outline-offset: 4px;
+}
+
 .service-card h3 {
     margin-bottom: 15px;
     color: white;
@@ -385,6 +396,41 @@ h2 {
 
 .service-card p {
     color: #ccc;
+}
+
+/* SERVICE DETAIL */
+.service-detail {
+    padding: 80px 10%;
+    background: rgba(10, 10, 10, 0.2);
+}
+
+.service-detail-text {
+    max-width: 880px;
+    margin-bottom: 28px;
+}
+
+.service-detail-text p {
+    margin-bottom: 18px;
+    color: #ccc;
+}
+
+.service-detail-text h3 {
+    margin: 26px 0 12px;
+    color: white;
+    font-size: 1.18rem;
+}
+
+.service-detail-list {
+    margin: 0 0 22px 20px;
+    color: #ddd;
+}
+
+.service-detail-list li {
+    margin-bottom: 8px;
+}
+
+.service-gallery {
+    margin-top: 28px;
 }
 
 /* LGS */
@@ -464,6 +510,46 @@ h2 {
     box-shadow: 0 0 20px rgba(255, 77, 0, 0.25);
 }
 
+/* COLLABORATORS */
+.collaborators {
+    padding: 80px 10%;
+    background: rgba(10, 10, 10, 0.2);
+}
+
+.collaborators-grid {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 22px;
+}
+
+.collaborator-logo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: min(100%, 280px);
+    min-height: 120px;
+    padding: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 8px;
+    background: rgba(18, 18, 18, 0.68);
+    transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+}
+
+.collaborator-logo:hover,
+.collaborator-logo:focus-visible {
+    transform: translateY(-3px);
+    border-color: rgba(231, 196, 106, 0.7);
+    background: rgba(26, 26, 26, 0.82);
+}
+
+.collaborator-logo img {
+    display: block;
+    max-width: 100%;
+    max-height: 78px;
+    object-fit: contain;
+}
+
 /* CONTACT */
 .contact {
     background: rgba(10, 10, 10, 0.25);
@@ -481,6 +567,28 @@ h2 {
 .contact-actions {
     justify-content: flex-start;
     margin-top: 22px;
+}
+
+/* FOOTER */
+.site-footer {
+    padding: 24px 10%;
+    background: rgba(0, 0, 0, 0.72);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.site-footer p {
+    color: #aaa;
+    font-size: 0.92rem;
+}
+
+.site-footer a {
+    color: #e7c46a;
+    text-decoration: none;
+}
+
+.site-footer a:hover,
+.site-footer a:focus-visible {
+    text-decoration: underline;
 }
 
 /* LIGHTBOX */
