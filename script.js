@@ -7,6 +7,13 @@ const savedLanguage = getStoredLanguage();
 const defaultLanguage = browserLanguage.startsWith("fr") ? "fr" : browserLanguage.startsWith("nl") ? "vls" : "en";
 let currentLanguage = savedLanguage || defaultLanguage;
 let heroPhraseIndex = 0;
+const servicePageLinks = {
+    construction: "construction.html",
+    "project-management": "project-management.html",
+    renovations: "renovations.html",
+    "interior-design": "interior-design.html",
+    "garden-living-units": "garden-living-units.html",
+};
 
 function getStoredLanguage() {
     try {
@@ -398,15 +405,17 @@ function updateGeneratedGalleryLabels() {
 function applyLanguage(language) {
     currentLanguage = translations[language] ? language : "en";
     const copy = getCopy();
+    const pageTitle = document.body.dataset.pageTitle || copy.title;
+    const pageDescription = document.body.dataset.pageDescription || copy.metaDescription;
 
     document.documentElement.lang = copy.htmlLang;
-    document.title = copy.title;
-    setText("title", copy.title);
-    document.querySelector('meta[name="description"]')?.setAttribute("content", copy.metaDescription);
-    document.querySelector('meta[property="og:title"]')?.setAttribute("content", copy.title);
-    document.querySelector('meta[property="og:description"]')?.setAttribute("content", copy.metaDescription);
-    document.querySelector('meta[name="twitter:title"]')?.setAttribute("content", copy.title);
-    document.querySelector('meta[name="twitter:description"]')?.setAttribute("content", copy.metaDescription);
+    document.title = pageTitle;
+    setText("title", pageTitle);
+    document.querySelector('meta[name="description"]')?.setAttribute("content", pageDescription);
+    document.querySelector('meta[property="og:title"]')?.setAttribute("content", pageTitle);
+    document.querySelector('meta[property="og:description"]')?.setAttribute("content", pageDescription);
+    document.querySelector('meta[name="twitter:title"]')?.setAttribute("content", pageTitle);
+    document.querySelector('meta[name="twitter:description"]')?.setAttribute("content", pageDescription);
 
     document.querySelector(".language-switcher")?.setAttribute("aria-label", copy.chooseLanguage);
     languageButtons.forEach((button) => {
@@ -436,8 +445,8 @@ function applyLanguage(language) {
 
     setText("#services h2", copy.servicesTitle);
     Object.keys(copy.services).forEach((key) => {
-        setText(`.service-link[href="#${key}"] h3`, copy.services[key][0]);
-        setText(`.service-link[href="#${key}"] p`, copy.services[key][1]);
+        setText(`.service-link[href="${servicePageLinks[key] || `#${key}`}"] h3`, copy.services[key][0]);
+        setText(`.service-link[href="${servicePageLinks[key] || `#${key}`}"] p`, copy.services[key][1]);
     });
 
     setText("#construction h2", copy.details.construction[0]);

@@ -361,6 +361,35 @@ section {
     contain-intrinsic-size: 700px;
 }
 
+.page-section {
+    min-height: calc(100vh - 64px);
+    padding-top: 96px;
+}
+
+.page-title {
+    font-size: clamp(2.2rem, 4vw, 4.2rem);
+    line-height: 1.05;
+    margin-bottom: 18px;
+    max-width: 980px;
+}
+
+.page-lead {
+    max-width: 880px;
+    margin-bottom: 30px;
+    color: #ddd;
+    font-size: 1.08rem;
+}
+
+.text-link {
+    color: #e7c46a;
+    text-decoration: none;
+}
+
+.text-link:hover,
+.text-link:focus-visible {
+    text-decoration: underline;
+}
+
 /* TITULOS */
 h2 {
     font-size: 2rem;
