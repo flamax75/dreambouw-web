@@ -27,14 +27,14 @@ function storeLanguage(language) {
 const translations = {
     en: {
         htmlLang: "en",
-        title: "DreamBouw Group",
-        metaDescription: "DreamBouw Group delivers construction, renovations, project management, interior design, Garden Living Units, and Light Gauge Steel solutions with durable, professional execution.",
+        title: "DreamBouw Group | Construction, Renovations & LGS in Belgium",
+        metaDescription: "DreamBouw Group provides construction, renovations, project management, interior design, Garden Living Units, and Light Gauge Steel solutions in Belgium.",
         chooseLanguage: "Choose language",
         openNav: "Open navigation menu",
         closeNav: "Close navigation menu",
         skip: "Skip",
         nav: ["Home", "About", "Services", "LGS", "Collaborators", "Contact"],
-        heroPhrases: ["YOU DREAM IT", "WE BUILD IT"],
+        heroPhrases: ["Construction, Renovations & LGS", "YOU DREAM IT. WE BUILD IT"],
         quoteButton: "Request a quote",
         quoteSubject: "Project request - DreamBouw Group",
         contactBody: "Hello DreamBouw Group,\n\nI would like to discuss a project.\n\nProject type:\nLocation:\nTimeline:\nMessage:\n",
@@ -91,6 +91,7 @@ const translations = {
             "interior-design": "interior design",
             "garden-living-units": "garden living unit",
         },
+        galleryImageAlt: "DreamBouw Group {label} project photo {number}",
         openImage: "Open {label} image {number}",
         lightbox: {
             gallery: "Project gallery",
@@ -102,14 +103,14 @@ const translations = {
     },
     fr: {
         htmlLang: "fr",
-        title: "DreamBouw Group",
-        metaDescription: "DreamBouw Group realise des projets de construction, renovation, gestion de projet, design interieur, Garden Living Units et solutions Light Gauge Steel avec une execution durable et professionnelle.",
+        title: "DreamBouw Group | Construction, renovation et LGS en Belgique",
+        metaDescription: "DreamBouw Group realise des projets de construction, renovation, gestion de projet, design interieur, Garden Living Units et Light Gauge Steel en Belgique.",
         chooseLanguage: "Choisir la langue",
         openNav: "Ouvrir le menu de navigation",
         closeNav: "Fermer le menu de navigation",
         skip: "Passer",
         nav: ["Accueil", "A propos", "Services", "LGS", "Collaborateurs", "Contact"],
-        heroPhrases: ["VOUS L'IMAGINEZ", "NOUS LE CONSTRUISONS"],
+        heroPhrases: ["Construction, renovation et LGS", "VOUS L'IMAGINEZ. NOUS LE CONSTRUISONS"],
         quoteButton: "Demander un devis",
         quoteSubject: "Demande de projet - DreamBouw Group",
         contactBody: "Bonjour DreamBouw Group,\n\nJe souhaite discuter d'un projet.\n\nType de projet :\nLieu :\nDelai :\nMessage :\n",
@@ -166,6 +167,7 @@ const translations = {
             "interior-design": "design interieur",
             "garden-living-units": "Garden Living Unit",
         },
+        galleryImageAlt: "Photo de projet {label} DreamBouw Group {number}",
         openImage: "Ouvrir l'image {number} - {label}",
         lightbox: {
             gallery: "Galerie de projet",
@@ -177,14 +179,14 @@ const translations = {
     },
     vls: {
         htmlLang: "nl-BE",
-        title: "DreamBouw Group",
-        metaDescription: "DreamBouw Group levert bouw, renovaties, projectbeheer, interieurontwerp, Garden Living Units en Light Gauge Steel-oplossingen met duurzame en professionele uitvoering.",
+        title: "DreamBouw Group | Bouw, renovaties en LGS in Belgie",
+        metaDescription: "DreamBouw Group levert bouw, renovaties, projectbeheer, interieurontwerp, Garden Living Units en Light Gauge Steel-oplossingen in Belgie.",
         chooseLanguage: "Taal kiezen",
         openNav: "Navigatiemenu openen",
         closeNav: "Navigatiemenu sluiten",
         skip: "Overslaan",
         nav: ["Home", "Over ons", "Diensten", "LGS", "Partners", "Contact"],
-        heroPhrases: ["JIJ DROOMT HET", "WIJ BOUWEN HET"],
+        heroPhrases: ["Bouw, renovaties en LGS", "JIJ DROOMT HET. WIJ BOUWEN HET"],
         quoteButton: "Offerte aanvragen",
         quoteSubject: "Projectaanvraag - DreamBouw Group",
         contactBody: "Hallo DreamBouw Group,\n\nIk wil graag een project bespreken.\n\nType project:\nLocatie:\nTiming:\nBericht:\n",
@@ -241,6 +243,7 @@ const translations = {
             "interior-design": "interieurontwerp",
             "garden-living-units": "Garden Living Unit",
         },
+        galleryImageAlt: "DreamBouw Group {label} projectfoto {number}",
         openImage: "Open {label} afbeelding {number}",
         lightbox: {
             gallery: "Projectgalerij",
@@ -252,14 +255,14 @@ const translations = {
     },
     nl: {
         htmlLang: "nl",
-        title: "DreamBouw Group",
-        metaDescription: "DreamBouw Group levert bouw, renovaties, projectmanagement, interieurontwerp, Garden Living Units en Light Gauge Steel-oplossingen met duurzame en professionele uitvoering.",
+        title: "DreamBouw Group | Bouw, renovaties en LGS in Belgie",
+        metaDescription: "DreamBouw Group levert bouw, renovaties, projectmanagement, interieurontwerp, Garden Living Units en Light Gauge Steel-oplossingen in Belgie.",
         chooseLanguage: "Taal kiezen",
         openNav: "Navigatiemenu openen",
         closeNav: "Navigatiemenu sluiten",
         skip: "Overslaan",
         nav: ["Home", "Over ons", "Diensten", "LGS", "Partners", "Contact"],
-        heroPhrases: ["JIJ DROOMT HET", "WIJ BOUWEN HET"],
+        heroPhrases: ["Bouw, renovaties en LGS", "JIJ DROOMT HET. WIJ BOUWEN HET"],
         quoteButton: "Offerte aanvragen",
         quoteSubject: "Projectaanvraag - DreamBouw Group",
         contactBody: "Hallo DreamBouw Group,\n\nIk wil graag een project bespreken.\n\nType project:\nLocatie:\nPlanning:\nBericht:\n",
@@ -316,6 +319,7 @@ const translations = {
             "interior-design": "interieurontwerp",
             "garden-living-units": "Garden Living Unit",
         },
+        galleryImageAlt: "DreamBouw Group {label} projectfoto {number}",
         openImage: "Open {label} afbeelding {number}",
         lightbox: {
             gallery: "Projectgalerij",
@@ -366,6 +370,12 @@ function getGalleryLabel(key) {
     return getCopy().galleryLabels[key] || key.replaceAll("-", " ");
 }
 
+function getGalleryImageAlt(key, number) {
+    const label = getGalleryLabel(key);
+    const template = getCopy().galleryImageAlt || translations.en.galleryImageAlt;
+    return formatTranslation(template, { label, number });
+}
+
 function updateGeneratedGalleryLabels() {
     document.querySelectorAll("[data-gallery-key] .project-card").forEach((card) => {
         const gallery = card.closest("[data-gallery-key]");
@@ -380,7 +390,7 @@ function updateGeneratedGalleryLabels() {
         }
 
         if (img) {
-            img.alt = `${label} ${number}`;
+            img.alt = getGalleryImageAlt(gallery.dataset.galleryKey, number);
         }
     });
 }
@@ -393,7 +403,9 @@ function applyLanguage(language) {
     document.title = copy.title;
     setText("title", copy.title);
     document.querySelector('meta[name="description"]')?.setAttribute("content", copy.metaDescription);
+    document.querySelector('meta[property="og:title"]')?.setAttribute("content", copy.title);
     document.querySelector('meta[property="og:description"]')?.setAttribute("content", copy.metaDescription);
+    document.querySelector('meta[name="twitter:title"]')?.setAttribute("content", copy.title);
     document.querySelector('meta[name="twitter:description"]')?.setAttribute("content", copy.metaDescription);
 
     document.querySelector(".language-switcher")?.setAttribute("aria-label", copy.chooseLanguage);
@@ -581,7 +593,7 @@ document.querySelectorAll("[data-gallery-key]").forEach((gallery) => {
     gallery.innerHTML = images.map((image, index) => `
         <div class="project-card" data-images='${JSON.stringify(images)}' data-start-index="${index}">
             <button class="project-button" type="button" aria-label="${formatTranslation(getCopy().openImage, { label, number: index + 1 })}">
-                <img src="${image}" alt="${label} ${index + 1}" loading="lazy" decoding="async">
+                <img src="${image}" alt="${getGalleryImageAlt(gallery.dataset.galleryKey, index + 1)}" loading="lazy" decoding="async">
             </button>
         </div>
     `).join("");
