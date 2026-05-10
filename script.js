@@ -673,38 +673,13 @@ projectCards.forEach((card) => {
     }
 
     const startIndex = Number(card.dataset.startIndex || 0);
-    let currentIndex = Number.isNaN(startIndex) ? 0 : startIndex;
-    let interval = null;
-
-    function showNextImage() {
-        if (!img || images.length === 0) return;
-
-        currentIndex = (currentIndex + 1) % images.length;
-
-        img.style.opacity = "0.4";
-
-        setTimeout(() => {
-            img.src = images[currentIndex];
-            img.style.opacity = "1";
-        }, 150);
-    }
+    const currentIndex = Number.isNaN(startIndex) ? 0 : startIndex;
 
     if (button) {
         button.addEventListener("click", () => {
             openLightbox(images, currentIndex);
         });
     }
-
-    card.addEventListener("mouseenter", () => {
-        if (!interval) {
-            interval = setInterval(showNextImage, 1200);
-        }
-    });
-
-    card.addEventListener("mouseleave", () => {
-        clearInterval(interval);
-        interval = null;
-    });
 });
 
 if (lightboxPrev) {
