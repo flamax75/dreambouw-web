@@ -475,7 +475,19 @@ function applyLanguage(language) {
     setText("#lgs .lgs-final", copy.lgsFinal);
 
     setText("#collaborators h2", copy.collaboratorsTitle);
-    document.querySelector(".collaborator-logo")?.setAttribute("aria-label", currentLanguage === "fr" ? "Visiter le site Flamaxmedia" : currentLanguage === "en" ? "Visit Flamaxmedia website" : "Bezoek de website van Flamaxmedia");
+    document.querySelectorAll(".collaborator-logo").forEach((logo) => {
+        const company = logo.dataset.company;
+
+        if (company) {
+            const label = currentLanguage === "fr"
+                ? `Visiter le site ${company}`
+                : currentLanguage === "en"
+                    ? `Visit ${company} website`
+                    : `Bezoek de website van ${company}`;
+
+            logo.setAttribute("aria-label", label);
+        }
+    });
 
     setText("#contact h2", copy.contactTitle);
     setText("#contact p", copy.contactText);
